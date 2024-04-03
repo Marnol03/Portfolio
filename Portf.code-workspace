@@ -10,5 +10,7 @@
 			"path": "../../Cours/5 Semerster/ki"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Portf"
+	}
 }
