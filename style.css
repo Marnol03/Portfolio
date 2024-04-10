@@ -320,7 +320,7 @@ section .title::after{
 .skills .skills-content .left p{
     text-align: justify;
 }
-.skills .skills-content .left a{
+.skills .skills-content .left .git a{
     display: inline-block;
     background: rgb(20, 30, 220);
     color: #fff;
@@ -335,6 +335,9 @@ section .title::after{
 .skills .skills-content .left a:hover{
     color: rgb(20, 30, 220);
     background: none;
+}
+.skills .skills-content .left .project a{
+    
 }
 .skills .skills-content .right .bars{
     margin-bottom: 15px;
@@ -383,8 +386,22 @@ section .title::after{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-top: 20px;
-
+}
+.mit_license{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.cart{
+    border-radius: 5px;
+    margin: 5px;
+    padding: 7px;
+    width: 150px;
+    height: 170px;
+    border: solid 1px #000;
+    justify-content: center;
+    
 }
 
 /* contact section styling */
@@ -482,3 +499,4 @@ section .title::after{
     color: rgb(20, 30, 220);
     background: none;
 }
+

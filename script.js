@@ -35,14 +35,14 @@ $(document).ready(function(){
 
     // typing text animation script
     var typed = new Typed(".typing", {
-        strings: ["Student", "Fullstack-Developer", "Designer"],
+        strings: ["YouTuber", "Developer", "Blogger", "Designer", "Freelancer"],
         typeSpeed: 100,
         backSpeed: 60,
         loop: true
     });
 
     var typed = new Typed(".typing-2", {
-        strings: ["Student", "Fullstack-Developer", "Web-Designer"],
+        strings: ["YouTuber", "Developer", "Blogger", "Designer", "Freelancer"],
         typeSpeed: 100,
         backSpeed: 60,
         loop: true
@@ -69,5 +69,37 @@ $(document).ready(function(){
                 nav: false
             }
         }
+    });
+
+    document.getElementById("d_cv").addEventListener("click", function(event) {
+        event.preventDefault(); // Prevent the link from navigating to another page
+        
+        // Path to local file
+        var cheminFichier = "images/leben.pdf";
+
+        // Loading file using XMLHttpRequest
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', cheminFichier, true);
+        xhr.responseType = 'blob';
+
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+                // Creating a Blob with the contents of the file
+                var blob = new Blob([xhr.response], { type: 'application/octet-stream' });
+
+                // Creating a temporary link for download
+                var lienTelechargement = document.createElement('a');
+                lienTelechargement.href = URL.createObjectURL(blob);
+
+                // Specifying the file name and enabling download
+                lienTelechargement.download = "Lebenslauf.pdf";
+                lienTelechargement.click();
+
+                // Cleaning the Blob URL
+                URL.revokeObjectURL(lienTelechargement.href);
+            }
+        };
+
+        xhr.send();
     });
 });
